@@ -1,0 +1,16 @@
+[project]
+name = "ssmrag"
+version = "0.0.0"
+description = "SSM-RAG"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+[project.urls]
+Repository = "https://github.com/nzw2cp/ssm-rag"
+
+[build-system]
+requires = [
+    "setuptools>=61.0.0"
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
