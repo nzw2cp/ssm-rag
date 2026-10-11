@@ -1,0 +1,17 @@
+{
+  "document-001": {
+    "file": "038f27b6265bf144304a1f6dc239d581f2218105287381b8d84c156505c89516.pt",
+    "token_count": 64,
+    "checkpoint_id": "state-spaces/mamba3-siso-1.5b"
+  },
+  "document-002": {
+    "file": "5339f6a63d969d8c622dd872285b7107014e005c0a20c01971b128563f2b1d48.pt",
+    "token_count": 64,
+    "checkpoint_id": "state-spaces/mamba3-siso-1.5b"
+  },
+  "document-003": {
+    "file": "7a541cc4d7dad363aabefa337e8e6f260f1215e341fac6d234bac70b4a05a468.pt",
+    "token_count": 64,
+    "checkpoint_id": "state-spaces/mamba3-siso-1.5b"
+  }
+}
