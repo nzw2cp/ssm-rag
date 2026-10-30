@@ -242,3 +242,268 @@ class PRECOG:
 
     def list_chunks(self):
         return list(self.manifest.keys())
+
+    # HIDDEN STATE EXPORT
+
+    @staticmethod
+    def _write_tensor(file, name, tensor, full_values=False):
+        """
+        Export tensor information to a readable text file.
+        """
+
+        tensor = tensor.detach().cpu().contiguous()
+
+        file.write(f"\n{name}\n")
+        file.write(f"Shape: {tuple(tensor.shape)}\n")
+        file.write(f"Data type: {tensor.dtype}\n")
+        file.write(f"Elements: {tensor.numel()}\n")
+
+        flat = tensor.reshape(-1)
+
+        if full_values:
+            file.write("All values:\n")
+
+            # Write in small batches to avoid building
+            # one enormous Python string.
+            for start in range(0, flat.numel(), 256):
+                values = flat[start:start + 256].tolist()
+
+                file.write(
+                    " ".join(str(v) for v in values)
+                    + "\n"
+                )
+        else:
+            file.write("First 16 values:\n")
+            file.write(
+                str(flat[:16].tolist()) + "\n"
+            )
+            file.write(
+                "[Preview only: set full_values=True "
+                "to export every value]\n"
+            )
+
+    def export_hidden_states(
+        self,
+        token_ids,
+        output_dir="hidden_state_outputs",
+        full_values=False,
+        include_intermediate=True,
+        include_activations=True
+    ):
+        """
+        Export final and intermediate Mamba 3 states.
+
+        Final states:
+            Cache after the complete input.
+
+        Intermediate states:
+            Cache after each input-token prefix.
+
+        Layer activations:
+            Output tensor from each Mamba layer
+            at every input position.
+        """
+
+        if not token_ids:
+            raise ValueError("token_ids cannot be empty")
+
+        output_dir = Path(output_dir)
+        output_dir.mkdir(
+            parents=True,
+            exist_ok=True
+        )
+
+        tokens = torch.tensor(
+            [token_ids],
+            dtype=torch.long,
+            device=self.device
+        )
+
+        # Capture layer activations
+        activations = {}
+        hooks = []
+
+        if include_activations:
+
+            for layer_id, layer in enumerate(
+                self.model.backbone.layers
+            ):
+
+                def capture_hook(
+                    module,
+                    inputs,
+                    output,
+                    index=layer_id
+                ):
+                    # Mamba Block returns:
+                    # (hidden_states, residual)
+                    hidden = output[0]
+
+                    activations[index] = (
+                        hidden.detach().cpu().clone()
+                    )
+
+                hooks.append(
+                    layer.register_forward_hook(
+                        capture_hook
+                    )
+                )
+
+        # Process the complete input
+        cache = self._create_cache(
+            max_seqlen=len(token_ids) + 1
+        )
+
+        try:
+            with torch.inference_mode():
+                self.model(
+                    tokens,
+                    inference_params=cache
+                )
+        finally:
+            for hook in hooks:
+                hook.remove()
+
+        # Export final recurrent states
+        final_path = output_dir / "final_states.txt"
+
+        with final_path.open(
+            "w", encoding="utf-8"
+        ) as file:
+
+            file.write("MAMBA 3 FINAL RECURRENT STATES\n")
+            file.write(f"Model: {self.model_name}\n")
+            file.write(f"Tokens: {len(token_ids)}\n")
+            file.write(
+                f"Layers: "
+                f"{len(cache.key_value_memory_dict)}\n"
+            )
+
+            for layer_id, states in (
+                cache.key_value_memory_dict.items()
+            ):
+
+                file.write(
+                    f"\n========== LAYER {layer_id} "
+                    f"==========\n"
+                )
+
+                for state_id, tensor in enumerate(states):
+
+                    self._write_tensor(
+                        file,
+                        f"Recurrent State {state_id}",
+                        tensor,
+                        full_values
+                    )
+
+        print("Final states saved:", final_path)
+
+        # Export layer activations
+        if include_activations:
+
+            activation_path = (
+                output_dir / "layer_activations.txt"
+            )
+
+            with activation_path.open(
+                "w", encoding="utf-8"
+            ) as file:
+
+                file.write(
+                    "MAMBA 3 LAYER ACTIVATIONS\n"
+                )
+
+                for layer_id in sorted(activations):
+
+                    self._write_tensor(
+                        file,
+                        f"Layer {layer_id} output",
+                        activations[layer_id],
+                        full_values
+                    )
+
+            print(
+                "Layer activations saved:",
+                activation_path
+            )
+
+        #  Export intermediate recurrent states
+        if include_intermediate:
+
+            intermediate_dir = (
+                output_dir / "intermediate_states"
+            )
+
+            intermediate_dir.mkdir(
+                parents=True,
+                exist_ok=True
+            )
+
+
+            for position in range(1, len(token_ids) + 1):
+
+                prefix = tokens[:, :position]
+
+                prefix_cache = self._create_cache(
+                    max_seqlen=position + 1
+                )
+
+                with torch.inference_mode():
+                    self.model(
+                        prefix,
+                        inference_params=prefix_cache
+                    )
+
+                path = intermediate_dir / (
+                    f"token_{position:04d}.txt"
+                )
+
+                with path.open(
+                    "w", encoding="utf-8"
+                ) as file:
+
+                    file.write(
+                        "MAMBA 3 INTERMEDIATE "
+                        "RECURRENT STATES\n"
+                    )
+
+                    file.write(
+                        f"After token position: "
+                        f"{position}\n"
+                    )
+
+                    file.write(
+                        f"Token ID: "
+                        f"{token_ids[position - 1]}\n"
+                    )
+
+                    for layer_id, states in (
+                        prefix_cache
+                        .key_value_memory_dict.items()
+                    ):
+
+                        file.write(
+                            f"\n========== LAYER "
+                            f"{layer_id} ==========\n"
+                        )
+
+                        for state_id, tensor in enumerate(
+                            states
+                        ):
+
+                            self._write_tensor(
+                                file,
+                                f"Recurrent State {state_id}",
+                                tensor,
+                                full_values
+                            )
+
+                print(
+                    f"Exported intermediate "
+                    f"state {position}/{len(token_ids)}"
+                )
+
+        print("\nHidden-state export complete!")
+
+        return output_dir
