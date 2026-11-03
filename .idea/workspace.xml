@@ -5,8 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bc11a8-340d-4f66-baf8-50ec67b8c094" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test_hiddent states.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Precog/PRECOG.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mamba_ssm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG_Comparison.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/test_precog.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ssmrag.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssmrag.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/PRECOG.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Mamba3/PRECOG_Mamba3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/final_states.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0001.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0002.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0003.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0004.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0005.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0006.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0007.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/intermediate_states/token_0008.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/hidden_state_outputs/layer_activations.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/precog_states/038f27b6265bf144304a1f6dc239d581f2218105287381b8d84c156505c89516.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/precog_states/5339f6a63d969d8c622dd872285b7107014e005c0a20c01971b128563f2b1d48.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/precog_states/7a541cc4d7dad363aabefa337e8e6f260f1215e341fac6d234bac70b4a05a468.pt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/precog_states/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/test_hiddent states.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Mamba3/test_hiddent states.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/test_precog.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Mamba3/test_precog_Mamba3.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +37,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="20" />
+    <option name="cachedIndexableFilesCount" value="31" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,23 +55,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.0" />
-      <entry key="S60" value="1.0" />
-      <entry key="M2" value="1.0" />
-      <entry key="M5" value="1.0" />
-      <entry key="M10" value="1.0" />
-      <entry key="M15" value="1.0" />
-      <entry key="M30" value="1.0" />
-      <entry key="H1" value="1.0" />
-      <entry key="H2" value="1.0" />
-      <entry key="H4" value="1.0" />
-      <entry key="D1" value="1.0" />
-      <entry key="W1" value="1.0" />
+      <entry key="MS100" value="1.0087288057661892" />
+      <entry key="MS500" value="1.3874279654795858" />
+      <entry key="S2" value="1.7889468408524651" />
+      <entry key="S5" value="1.9095343312928383" />
+      <entry key="S10" value="1.9536950934616568" />
+      <entry key="S30" value="1.9843204683673257" />
+      <entry key="S60" value="1.9921292599088718" />
+      <entry key="M2" value="1.9960568557755896" />
+      <entry key="M5" value="1.9985099138941247" />
+      <entry key="M10" value="2.0156068990668485" />
+      <entry key="M15" value="2.0954484658392896" />
+      <entry key="M30" value="2.7368549295853155" />
+      <entry key="H1" value="5.190991122979089" />
+      <entry key="H2" value="10.065584086995784" />
+      <entry key="H4" value="15.437124439458636" />
+      <entry key="D1" value="22.993056597932334" />
+      <entry key="W1" value="24.70104283113688" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -70,23 +93,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="6.162418511569463E-7" />
-      <entry key="MS500" value="0.05727304029220946" />
-      <entry key="S2" value="0.48920125158141653" />
-      <entry key="S5" value="0.7512682303794991" />
-      <entry key="S10" value="0.8667573076585504" />
-      <entry key="S30" value="0.953452738870098" />
-      <entry key="S60" value="0.9764490457110898" />
-      <entry key="M2" value="0.9881543633011443" />
-      <entry key="M5" value="0.9952447998224426" />
-      <entry key="M10" value="0.9976195666798254" />
-      <entry key="M15" value="0.9984124141792081" />
-      <entry key="M30" value="0.9992058917856761" />
-      <entry key="H1" value="0.9996028670355422" />
-      <entry key="H2" value="0.9998014137995317" />
-      <entry key="H4" value="0.9999007019697164" />
-      <entry key="D1" value="0.9999834496435154" />
-      <entry key="W1" value="0.999997635646589" />
+      <entry key="MS100" value="0.009754728292056447" />
+      <entry key="MS500" value="0.4696231086056699" />
+      <entry key="S2" value="1.3140250685932673" />
+      <entry key="S5" value="1.681804685507341" />
+      <entry key="S10" value="1.8323926405618778" />
+      <entry key="S30" value="1.9421107121315886" />
+      <entry key="S60" value="1.970794288289349" />
+      <entry key="M2" value="1.98533121743932" />
+      <entry key="M5" value="1.9942056198069977" />
+      <entry key="M10" value="2.0134523302259737" />
+      <entry key="M15" value="2.0940113051895892" />
+      <entry key="M30" value="2.736132482855675" />
+      <entry key="H1" value="5.190606188609505" />
+      <entry key="H2" value="10.065353205463571" />
+      <entry key="H4" value="15.436982988278997" />
+      <entry key="D1" value="22.993026162243794" />
+      <entry key="W1" value="24.70103824920968" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -98,43 +121,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.PRECOG.executor&quot;: &quot;Run&quot;,
-    &quot;Python.check mamba dependencys.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_mamba.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog_cashe.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog_equivalence.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog_state.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PRECOG&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.PRECOG.executor": "Run",
+    "Python.PRECOG_Comparison.executor": "Run",
+    "Python.check mamba dependencys.executor": "Run",
+    "Python.test_hiddent states.executor": "Run",
+    "Python.test_mamba.executor": "Run",
+    "Python.test_precog.executor": "Run",
+    "Python.test_precog_cashe.executor": "Run",
+    "Python.test_precog_equivalence.executor": "Run",
+    "Python.test_precog_state.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "PRECOG",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\precog_states" />
+      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Falcon" />
+      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\Outputted files" />
       <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog" />
-      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\" />
+      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Mamba3" />
+      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\precog_states" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -152,6 +179,7 @@
       <option name="presentableId" value="Default" />
       <updated>1791505481635</updated>
       <workItem from="1791585139841" duration="8474000" />
+      <workItem from="1793719612932" duration="19505000" />
     </task>
     <servers />
   </component>
@@ -160,11 +188,13 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ssm_rag$test_mamba.coverage" NAME="test_mamba Coverage Results" MODIFIED="1791587398899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ssm_rag$test_precog.coverage" NAME="test_precog Coverage Results" MODIFIED="1791736719246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
+    <SUITE FILE_PATH="coverage/ssm_rag$test_precog.coverage" NAME="test_precog Coverage Results" MODIFIED="1793743747708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
     <SUITE FILE_PATH="coverage/ssm_rag$PRECOG.coverage" NAME="PRECOG Coverage Results" MODIFIED="1791735159998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_precog_equivalence.coverage" NAME="test_precog_equivalence Coverage Results" MODIFIED="1791729354962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_precog_cashe.coverage" NAME="test_precog_cashe Coverage Results" MODIFIED="1791587615817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssm_rag$PRECOG_Comparison.coverage" NAME="PRECOG_Comparison Coverage Results" MODIFIED="1793744603580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
     <SUITE FILE_PATH="coverage/ssm_rag$check_mamba_dependencys.coverage" NAME="check mamba dependencys Coverage Results" MODIFIED="1791587965430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_precog_state.coverage" NAME="test_precog_state Coverage Results" MODIFIED="1791588013516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssm_rag$test_hiddent_states.coverage" NAME="test_hiddent states Coverage Results" MODIFIED="1793377696187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
   </component>
 </project>
