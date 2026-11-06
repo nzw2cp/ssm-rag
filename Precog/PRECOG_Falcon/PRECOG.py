@@ -4,6 +4,7 @@
 Validated target: Transformers 4.47.1, 4-bit NF4 Falcon Mamba, CUDA.
 Multi-token continuation is approximate under reduced-precision projections.
 """
+
 from __future__ import annotations
 
 import hashlib

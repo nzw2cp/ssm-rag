@@ -1,117 +1,86 @@
 
+# Measure speedup from cached sequential to cached multi-token processing.
+
 import csv
 import statistics
 import time
 from pathlib import Path
 
 import torch
+from test_correctness import PRECOG, SCENARIOS, COUNTS, match
 
-from test_correctness import (
-    PRECOG,
-    SCENARIOS,
-    TOKEN_COUNTS,
-    agreement,
-)
-
-
+RESULTS = Path(__file__).resolve().parent / "results"
 REPEATS = 3
-OUTPUT_FILE = Path(__file__).resolve().parent / "performance_results.csv"
 
 
-def sync():
-    if torch.cuda.is_available():
-        torch.cuda.synchronize()
-
-
-def run(precog, state, position, ids, method):
-    sync()
+def timed(fn):
+    torch.cuda.synchronize()
     start = time.perf_counter()
-
-    result = precog.continue_tokens(
-        state, position, ids, method=method
-    )
-
-    sync()
+    result = fn()
+    torch.cuda.synchronize()
     return result, time.perf_counter() - start
 
 
-def measure(precog, state, position, ids, method):
-    run(precog, state, position, ids, method)
-
-    times = [
-        run(precog, state, position, ids, method)[1]
-        for _ in range(REPEATS)
-    ]
-
-    return statistics.median(times)
+def median_time(fn):
+    timed(fn)
+    return statistics.median(
+        timed(fn)[1] for _ in range(REPEATS)
+    )
 
 
 def main():
-    print("Falcon Mamba PRECOG performance tests")
+    RESULTS.mkdir(exist_ok=True)
+    model = PRECOG()
+    rows = []
 
-    precog = PRECOG()
-    results = []
+    for topic, document, question in SCENARIOS:
+        length, state = model.prepare(document)
+        question_ids = model.tokens(question * 4)
 
-    for name, document, question in SCENARIOS:
-        context_length, state = precog.prepare(document)
-        question_ids = precog.tokens(question * 4)
+        for count in COUNTS:
+            args = (state, length, question_ids[:count])
 
-        print(f"\n{name}: {context_length} context tokens")
-
-        for count in TOKEN_COUNTS:
-            ids = question_ids[:count]
-
-            ref, _ = run(
-                precog, state, context_length, ids, "sequential"
+            sequential = lambda: model.continue_tokens(
+                *args, method="sequential"
             )
-            new, _ = run(
-                precog, state, context_length, ids, "multitoken"
+            multitoken = lambda: model.continue_tokens(
+                *args, method="multitoken"
             )
 
-            matched, total = agreement(ref[0], new[0])
-
-            sequential = measure(
-                precog, state, context_length, ids, "sequential"
+            matched, total = match(
+                sequential()[0], multitoken()[0]
             )
-            optimized = measure(
-                precog, state, context_length, ids, "multitoken"
-            )
-            speedup = sequential / optimized
 
-            results.append({
-                "scenario": name,
-                "context_tokens": context_length,
-                "continuation_tokens": count,
+            seq_s = median_time(sequential)
+            multi_s = median_time(multitoken)
+
+            rows.append({
+                "topic": topic,
+                "context_tokens": length,
+                "tokens": count,
                 "matched": matched,
                 "total": total,
-                "sequential_seconds": round(sequential, 4),
-                "multitoken_seconds": round(optimized, 4),
-                "speedup": round(speedup, 3),
+                "sequential_s": seq_s,
+                "multitoken_s": multi_s,
+                "speedup": seq_s / multi_s,
             })
 
             print(
-                f"{count:2} tokens | Match {matched}/{total} | "
-                f"Sequential {sequential:.4f}s | "
-                f"Multi {optimized:.4f}s | "
-                f"Speedup {speedup:.2f}x",
-                flush=True,
+                f"{topic} {count} tokens | {matched}/{total} | "
+                f"{seq_s:.3f}s vs {multi_s:.3f}s | "
+                f"{seq_s / multi_s:.2f}x"
             )
 
-    with OUTPUT_FILE.open(
-        "w", newline="", encoding="utf-8"
-    ) as file:
-        writer = csv.DictWriter(
-            file, fieldnames=list(results[0])
-        )
+    path = RESULTS / "cached_performance.csv"
+
+    with path.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=rows[0].keys())
         writer.writeheader()
-        writer.writerows(results)
+        writer.writerows(rows)
 
-    median = statistics.median(
-        row["speedup"] for row in results
-    )
-
-    print(f"\nMedian speedup: {median:.2f}x")
-    print("Results saved to:", OUTPUT_FILE)
+    median = statistics.median(r["speedup"] for r in rows)
+    print(f"Median speedup: {median:.2f}x")
+    print("Saved:", path)
 
 
 if __name__ == "__main__":

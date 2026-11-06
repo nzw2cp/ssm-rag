@@ -2,7 +2,7 @@
 <module external.system.id="pyproject.toml" type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$/mamba-build/mamba_ssm-2.3.2.post1">
-      <sourceFolder url="file://$MODULE_DIR$/mamba-build/mamba_ssm-2.3.2.post1/src" />
+      <sourceFolder url="file://$MODULE_DIR$/mamba-build/mamba_ssm-2.3.2.post1/src" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="WSL (Ubuntu): (/home/gamer/.virtualenvs/falcon-precog/bin/python) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
