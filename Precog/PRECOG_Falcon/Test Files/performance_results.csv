@@ -1,0 +1,9 @@
+scenario,context_tokens,continuation_tokens,matched,total,sequential_seconds,multitoken_seconds,speedup
+Geography,64,2,2,2,0.1521,0.1171,1.299
+Geography,64,7,7,7,0.4614,0.1453,3.175
+Geography,64,13,13,13,0.8832,0.169,5.227
+Geography,64,32,32,32,2.1682,0.33,6.571
+Computing,82,2,2,2,0.136,0.1063,1.279
+Computing,82,7,7,7,0.4543,0.1422,3.195
+Computing,82,13,13,13,0.8593,0.1725,4.98
+Computing,82,32,32,32,2.0856,0.2942,7.09

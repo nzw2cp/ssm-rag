@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bc11a8-340d-4f66-baf8-50ec67b8c094" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG_MultiToken.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_correctness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_performance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test_MultiToken_Benchmark.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/mamba_ssm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mamba_ssm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ssmrag.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG_Comparison.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG_Comparison.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,23 +37,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0087288057661892" />
-      <entry key="MS500" value="1.3874279654795858" />
-      <entry key="S2" value="1.7889468408524651" />
-      <entry key="S5" value="1.9095343312928383" />
-      <entry key="S10" value="1.9536950934616568" />
-      <entry key="S30" value="1.9843204683673257" />
-      <entry key="S60" value="1.9921292599088718" />
-      <entry key="M2" value="1.9960568557755896" />
-      <entry key="M5" value="1.9985099138941247" />
-      <entry key="M10" value="2.0156068990668485" />
-      <entry key="M15" value="2.0954484658392896" />
-      <entry key="M30" value="2.7368549295853155" />
-      <entry key="H1" value="5.190991122979089" />
-      <entry key="H2" value="10.065584086995784" />
-      <entry key="H4" value="15.437124439458636" />
-      <entry key="D1" value="22.993056597932334" />
-      <entry key="W1" value="24.70104283113688" />
+      <entry key="MS100" value="1.0000000020345108" />
+      <entry key="MS500" value="1.0413170074947005" />
+      <entry key="S2" value="2.148280457838946" />
+      <entry key="S5" value="3.612165163205755" />
+      <entry key="S10" value="5.032068236339408" />
+      <entry key="S30" value="8.532830642562963" />
+      <entry key="S60" value="10.688577178534906" />
+      <entry key="M2" value="12.466960228666803" />
+      <entry key="M5" value="14.8755176697578" />
+      <entry key="M10" value="16.49232716835462" />
+      <entry key="M15" value="17.26231026203438" />
+      <entry key="M30" value="18.64092813498892" />
+      <entry key="H1" value="21.406449720136767" />
+      <entry key="H2" value="26.447252703433524" />
+      <entry key="H4" value="32.00322285225102" />
+      <entry key="D1" value="39.89134510028119" />
+      <entry key="W1" value="41.68556025096445" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -72,23 +75,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.009754728292056447" />
-      <entry key="MS500" value="0.4696231086056699" />
-      <entry key="S2" value="1.3140250685932673" />
-      <entry key="S5" value="1.681804685507341" />
-      <entry key="S10" value="1.8323926405618778" />
-      <entry key="S30" value="1.9421107121315886" />
-      <entry key="S60" value="1.970794288289349" />
-      <entry key="M2" value="1.98533121743932" />
-      <entry key="M5" value="1.9942056198069977" />
-      <entry key="M10" value="2.0134523302259737" />
-      <entry key="M15" value="2.0940113051895892" />
-      <entry key="M30" value="2.736132482855675" />
-      <entry key="H1" value="5.190606188609505" />
-      <entry key="H2" value="10.065353205463571" />
-      <entry key="H4" value="15.436982988278997" />
-      <entry key="D1" value="22.993026162243794" />
-      <entry key="W1" value="24.70103824920968" />
+      <entry key="MS100" value="0.07910978819213882" />
+      <entry key="MS500" value="0.632614998687053" />
+      <entry key="S2" value="1.888991141898916" />
+      <entry key="S5" value="3.3798207414474772" />
+      <entry key="S10" value="4.83212645215059" />
+      <entry key="S30" value="8.382578070879845" />
+      <entry key="S60" value="10.585495211504934" />
+      <entry key="M2" value="12.404810352921364" />
+      <entry key="M5" value="14.846570237054342" />
+      <entry key="M10" value="16.476783732913038" />
+      <entry key="M15" value="17.251655430830347" />
+      <entry key="M30" value="18.635433464211552" />
+      <entry key="H1" value="21.40363568798129" />
+      <entry key="H2" value="26.445796677918395" />
+      <entry key="H4" value="32.0024658391417" />
+      <entry key="D1" value="39.89121151079491" />
+      <entry key="W1" value="41.685540915231755" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -106,10 +109,17 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.PRECOG.executor": "Run",
     "Python.PRECOG_Comparison.executor": "Run",
+    "Python.Test_Convolution.executor": "Run",
+    "Python.Test_Layer_Comparison.executor": "Run",
+    "Python.Test_MultiToken_Benchmark.executor": "Run",
+    "Python.Test_SSM.executor": "Run",
+    "Python.Test_multitotken.executor": "Run",
     "Python.check mamba dependencys.executor": "Run",
+    "Python.check_mamaba.executor": "Run",
     "Python.rag.executor": "Run",
     "Python.test_hiddent states.executor": "Run",
     "Python.test_mamba.executor": "Run",
+    "Python.test_performance.executor": "Run",
     "Python.test_precog.executor": "Run",
     "Python.test_precog_cashe.executor": "Run",
     "Python.test_precog_equivalence.executor": "Run",
@@ -137,14 +147,40 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Falcon\Test Files" />
       <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Falcon" />
-      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\Outputted files" />
       <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog" />
+      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\Outputted files" />
       <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Mamba3" />
-      <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\precog_states" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="mamba_ssm" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="WSL (Ubuntu): (/home/gamer/.virtualenvs/falcon-precog/bin/python)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="rag" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="ssmrag" />
       <option name="ENV_FILES" value="" />
@@ -157,11 +193,11 @@
       <option name="SDK_NAME" value="WSL (Ubuntu): (/home/gamer/.virtualenvs/falcon-precog/bin/python)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ssmrag" />
       <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ssmrag/rag.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -183,11 +219,11 @@
       <option name="SDK_NAME" value="WSL (Ubuntu): (/home/gamer/.virtualenvs/falcon-precog/bin/python)" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
       <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Precog/PRECOG_Falcon/test_precog.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -197,11 +233,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.rag" />
+      <item itemvalue="Python.test_precog" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-73a66231627c-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.10968.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-PY-263.7307.206" />
+        <option value="bundled-python-sdk-34611be1ca5a-e0583fc556d1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-263.7307.206" />
       </set>
     </attachedChunks>
   </component>
@@ -214,6 +255,7 @@
       <updated>1791505481635</updated>
       <workItem from="1791585139841" duration="8474000" />
       <workItem from="1793719612932" duration="19505000" />
+      <workItem from="1793922538062" duration="5073000" />
     </task>
     <servers />
   </component>
@@ -221,15 +263,22 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ssm_rag$test_precog_equivalence.coverage" NAME="test_precog_equivalence Coverage Results" MODIFIED="1791729354962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssm_rag$Test_Layer_Comparison.coverage" NAME="Test_Layer_Comparison Coverage Results" MODIFIED="1793978863537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$PRECOG_Comparison.coverage" NAME="PRECOG_Comparison Coverage Results" MODIFIED="1793919008842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$check_mamaba.coverage" NAME="check_mamaba Coverage Results" MODIFIED="1793918966689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssm_rag$Test_multitotken.coverage" NAME="Test_multitotken Coverage Results" MODIFIED="1793978170958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$Test_SSM.coverage" NAME="Test_SSM Coverage Results" MODIFIED="1793978594822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$test_precog_state.coverage" NAME="test_precog_state Coverage Results" MODIFIED="1791588013516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssm_rag$rag.coverage" NAME="rag Coverage Results" MODIFIED="1793918491796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ssmrag" />
+    <SUITE FILE_PATH="coverage/ssm_rag$test_hiddent_states.coverage" NAME="test_hiddent states Coverage Results" MODIFIED="1793377696187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_mamba.coverage" NAME="test_mamba Coverage Results" MODIFIED="1791587398899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ssm_rag$test_performance.coverage" NAME="test_performance Coverage Results" MODIFIED="1793980563867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_precog.coverage" NAME="test_precog Coverage Results" MODIFIED="1793749476792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
     <SUITE FILE_PATH="coverage/ssm_rag$PRECOG.coverage" NAME="PRECOG Coverage Results" MODIFIED="1791735159998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
-    <SUITE FILE_PATH="coverage/ssm_rag$test_precog_equivalence.coverage" NAME="test_precog_equivalence Coverage Results" MODIFIED="1791729354962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ssm_rag$rag.coverage" NAME="rag Coverage Results" MODIFIED="1793749520639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ssmrag" />
-    <SUITE FILE_PATH="coverage/ssm_rag$test_precog_cashe.coverage" NAME="test_precog_cashe Coverage Results" MODIFIED="1791587615817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ssm_rag$PRECOG_Comparison.coverage" NAME="PRECOG_Comparison Coverage Results" MODIFIED="1793744603580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
     <SUITE FILE_PATH="coverage/ssm_rag$check_mamba_dependencys.coverage" NAME="check mamba dependencys Coverage Results" MODIFIED="1791587965430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ssm_rag$test_precog_state.coverage" NAME="test_precog_state Coverage Results" MODIFIED="1791588013516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ssm_rag$test_hiddent_states.coverage" NAME="test_hiddent states Coverage Results" MODIFIED="1793377696187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
+    <SUITE FILE_PATH="coverage/ssm_rag$Test_MultiToken_Benchmark.coverage" NAME="Test_MultiToken_Benchmark Coverage Results" MODIFIED="1793980050205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$Test_Convolution.coverage" NAME="Test_Convolution Coverage Results" MODIFIED="1793978459137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$test_precog_cashe.coverage" NAME="test_precog_cashe Coverage Results" MODIFIED="1791587615817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
