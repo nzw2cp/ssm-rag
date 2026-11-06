@@ -1,29 +1,45 @@
 
 import csv
 import statistics
+import time
 from pathlib import Path
+
+import torch
 
 from test_correctness import (
     PRECOG,
-    PRECOGMultiToken,
     SCENARIOS,
     TOKEN_COUNTS,
-    prepare,
-    run,
     agreement,
 )
 
 
 REPEATS = 3
-RESULTS_FILE = Path(__file__).resolve().parent / "performance_results.csv"
+OUTPUT_FILE = Path(__file__).resolve().parent / "performance_results.csv"
 
 
-def measure(continuation, snapshot, position, ids, method):
-    # Warm up before collecting measurements.
-    run(continuation, snapshot, position, ids, method)
+def sync():
+    if torch.cuda.is_available():
+        torch.cuda.synchronize()
+
+
+def run(precog, state, position, ids, method):
+    sync()
+    start = time.perf_counter()
+
+    result = precog.continue_tokens(
+        state, position, ids, method=method
+    )
+
+    sync()
+    return result, time.perf_counter() - start
+
+
+def measure(precog, state, position, ids, method):
+    run(precog, state, position, ids, method)
 
     times = [
-        run(continuation, snapshot, position, ids, method)[2]
+        run(precog, state, position, ids, method)[1]
         for _ in range(REPEATS)
     ]
 
@@ -34,67 +50,68 @@ def main():
     print("Falcon Mamba PRECOG performance tests")
 
     precog = PRECOG()
-    continuation = PRECOGMultiToken(precog)
     results = []
 
     for name, document, question in SCENARIOS:
-        length, snapshot = prepare(precog, document)
+        context_length, state = precog.prepare(document)
         question_ids = precog.tokens(question * 4)
 
-        print(f"\n{name}: {length} context tokens")
+        print(f"\n{name}: {context_length} context tokens")
 
         for count in TOKEN_COUNTS:
             ids = question_ids[:count]
 
-            reference, _, _ = run(
-                continuation, snapshot, length, ids, "sequential"
+            ref, _ = run(
+                precog, state, context_length, ids, "sequential"
             )
-            candidate, _, _ = run(
-                continuation, snapshot, length, ids, "multitoken"
+            new, _ = run(
+                precog, state, context_length, ids, "multitoken"
             )
 
-            matched, total = agreement(reference, candidate)
+            matched, total = agreement(ref[0], new[0])
 
             sequential = measure(
-                continuation, snapshot, length, ids, "sequential"
+                precog, state, context_length, ids, "sequential"
             )
-            multitoken = measure(
-                continuation, snapshot, length, ids, "multitoken"
+            optimized = measure(
+                precog, state, context_length, ids, "multitoken"
             )
-
-            speedup = sequential / multitoken
+            speedup = sequential / optimized
 
             results.append({
                 "scenario": name,
-                "context_tokens": length,
+                "context_tokens": context_length,
                 "continuation_tokens": count,
                 "matched": matched,
                 "total": total,
                 "sequential_seconds": round(sequential, 4),
-                "multitoken_seconds": round(multitoken, 4),
+                "multitoken_seconds": round(optimized, 4),
                 "speedup": round(speedup, 3),
             })
 
             print(
-                f"{count:2} tokens | "
-                f"Match {matched}/{total} | "
+                f"{count:2} tokens | Match {matched}/{total} | "
                 f"Sequential {sequential:.4f}s | "
-                f"Multi {multitoken:.4f}s | "
+                f"Multi {optimized:.4f}s | "
                 f"Speedup {speedup:.2f}x",
                 flush=True,
             )
 
-    with RESULTS_FILE.open("w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=results[0].keys())
+    with OUTPUT_FILE.open(
+        "w", newline="", encoding="utf-8"
+    ) as file:
+        writer = csv.DictWriter(
+            file, fieldnames=list(results[0])
+        )
         writer.writeheader()
         writer.writerows(results)
 
-    print("\nPerformance summary")
-    print(
-        "Median speedup:",
-        f"{statistics.median(r['speedup'] for r in results):.2f}x",
+    median = statistics.median(
+        row["speedup"] for row in results
     )
-    print("Results saved to:", RESULTS_FILE)
+
+    print(f"\nMedian speedup: {median:.2f}x")
+    print("Results saved to:", OUTPUT_FILE)
 
 
 if __name__ == "__main__":
