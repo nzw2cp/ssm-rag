@@ -1,0 +1,5 @@
+method,document_count,state_offset,state_size_mib,encoding_seconds,merge_seconds,online_seconds,contains_project,contains_purpose,answer
+concat,3,48,20.0,0.160689,0,3.344871,True,True,"Mira Solen created Project Lantern, and its purpose was to clean drinking water for the village of Ardon."
+average,3,16,20.0,0.923227,0.076563,3.043822,True,True,"Mira Solen created Project Lantern, and its purpose was to provide clean drinking water to the village of Ardon."
+sum,3,16,20.0,0.923227,0.06823,2.821325,True,True,"Mira Solen created Project Lantern, and its purpose was to clean drinking water for the village of Ardon."
+max,3,16,20.0,0.923227,0.073489,2.630318,True,True,"Mira Solen created Project Lantern, which aimed to provide clean drinking water to the village of Ardon."

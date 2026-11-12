@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42bc11a8-340d-4f66-baf8-50ec67b8c094" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mamba_ssm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mamba_ssm.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Setup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Souping/Souping.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Souping/Test_Souping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_correctness.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_correctness.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_performance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files/test_performance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ssmrag/rag.py" beforeDir="false" afterPath="$PROJECT_DIR$/ssmrag/rag.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,49 +101,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.PRECOG.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PRECOG_Comparison.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_Convolution.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_Layer_Comparison.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_MultiToken_Benchmark.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_SSM.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Test_multitotken.executor&quot;: &quot;Run&quot;,
-    &quot;Python.check mamba dependencys.executor&quot;: &quot;Run&quot;,
-    &quot;Python.check_mamaba.executor&quot;: &quot;Run&quot;,
-    &quot;Python.rag.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_correctness.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_hiddent states.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_mamba.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_performance.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog_cashe.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog_equivalence.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_precog_state.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;PRECOG&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.PRECOG.executor": "Run",
+    "Python.PRECOG_Comparison.executor": "Run",
+    "Python.Test_Convolution.executor": "Run",
+    "Python.Test_Layer_Comparison.executor": "Run",
+    "Python.Test_MultiToken_Benchmark.executor": "Run",
+    "Python.Test_SSM.executor": "Run",
+    "Python.Test_Souping.executor": "Run",
+    "Python.Test_multitotken.executor": "Run",
+    "Python.check mamba dependencys.executor": "Run",
+    "Python.check_mamaba.executor": "Run",
+    "Python.rag.executor": "Run",
+    "Python.test_correctness.executor": "Run",
+    "Python.test_hiddent states.executor": "Run",
+    "Python.test_mamba.executor": "Run",
+    "Python.test_performance.executor": "Run",
+    "Python.test_precog.executor": "Run",
+    "Python.test_precog_cashe.executor": "Run",
+    "Python.test_precog_equivalence.executor": "Run",
+    "Python.test_precog_state.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "PRECOG",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Falcon\Test Files" />
@@ -155,7 +154,7 @@
       <recent name="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Mamba3" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.rag">
+  <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mamba_ssm" />
       <option name="ENV_FILES" value="" />
@@ -169,9 +168,9 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
-      <option name="DEBUG_JUST_MY_CODE" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -194,9 +193,9 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
-      <option name="DEBUG_JUST_MY_CODE" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ssmrag/rag.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -219,9 +218,9 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="false" />
       <option name="ADD_SOURCE_ROOTS" value="false" />
-      <option name="DEBUG_JUST_MY_CODE" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
+      <option name="RUN_AS_SCRIPT" value="" />
       <option name="SCRIPT_NAME" value="C:\Users\gamer\Downloads\Godot_v4.5.1-stable_win64.exe\godot projects\ssm-rag\Precog\PRECOG_Falcon\Test Files\test_precog.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -254,11 +253,23 @@
       <workItem from="1791585139841" duration="8474000" />
       <workItem from="1793719612932" duration="19505000" />
       <workItem from="1793922538062" duration="6339000" />
+      <workItem from="1794495394828" duration="1185000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Precog/PRECOG_Falcon/PRECOG.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ssm_rag$test_precog_equivalence.coverage" NAME="test_precog_equivalence Coverage Results" MODIFIED="1791729354962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -276,6 +287,7 @@
     <SUITE FILE_PATH="coverage/ssm_rag$PRECOG.coverage" NAME="PRECOG Coverage Results" MODIFIED="1791735159998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog" />
     <SUITE FILE_PATH="coverage/ssm_rag$check_mamba_dependencys.coverage" NAME="check mamba dependencys Coverage Results" MODIFIED="1791587965430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ssm_rag$Test_MultiToken_Benchmark.coverage" NAME="Test_MultiToken_Benchmark Coverage Results" MODIFIED="1793980050205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
+    <SUITE FILE_PATH="coverage/ssm_rag$Test_Souping.coverage" NAME="Test_Souping Coverage Results" MODIFIED="1794495872580" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Souping" />
     <SUITE FILE_PATH="coverage/ssm_rag$Test_Convolution.coverage" NAME="Test_Convolution Coverage Results" MODIFIED="1793978459137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_correctness.coverage" NAME="test_correctness Coverage Results" MODIFIED="1793981570814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Precog/PRECOG_Falcon/Test Files" />
     <SUITE FILE_PATH="coverage/ssm_rag$test_precog_cashe.coverage" NAME="test_precog_cashe Coverage Results" MODIFIED="1791587615817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

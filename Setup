@@ -1,0 +1,56 @@
+
+# SSM-RAG Setup
+
+## Environment
+- Python 3.11
+- Ubuntu / WSL2 (Windows 11)
+- NVIDIA GPU with CUDA support
+
+## Libraries and Versions
+
+| Library | Version |
+|---|---|
+| PyTorch | 2.5.1+cu124 |
+| Transformers | 4.47.1 |
+| BitsAndBytes | 0.45.5 |
+| Triton | 3.1.0 |
+| Mamba-SSM | 2.2.6.post3 |
+| Accelerate | Latest compatible |
+| Causal-Conv1D | 1.4.0+ |
+| Safetensors | Latest compatible |
+| Matplotlib | Latest compatible |
+
+## Installation
+
+Run these commands in the Ubuntu terminal.
+
+### 1. Create a virtual environment
+
+sudo apt update
+sudo apt install python3.11 python3.11-venv python3-pip build-essential -y
+
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip setuptools wheel
+
+### 2. Install PyTorch (CUDA 12.4)
+
+pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+
+### 3. Install the remaining libraries
+
+pip install transformers==4.47.1 accelerate bitsandbytes==0.45.5 safetensors matplotlib
+
+### 4. Install Mamba dependencies
+
+pip install causal-conv1d>=1.4.0
+pip install mamba-ssm==2.2.6.post3 --no-build-isolation
+
+## Verify Installation
+
+python -c "import torch; print(torch.__version__); print('CUDA:', torch.cuda.is_available())"
+
+python -c "import transformers, bitsandbytes, mamba_ssm; print('Libraries loaded successfully')"
+
+CUDA should return True.
