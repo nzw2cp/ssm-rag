@@ -14,7 +14,6 @@ import numpy as np
 
 from datasets import load_dataset
 
-# @torch.inference_mode() # No need to decorate the class with inference_mode, as it is not a function.
 class RAG():
     def __init__(
             self,
@@ -37,7 +36,7 @@ class RAG():
 
         self.tokenizer = AutoTokenizer.from_pretrained(
             tokenizer_id,
-            token=True,
+            clean_up_tokenization_spaces=False,
         )
 
         self.model = MambaLMHeadModel.from_pretrained(
@@ -45,8 +44,9 @@ class RAG():
             device=self.device,
             dtype=self.dtype,
         )
+        self.model.eval()
     
-    @torch.inference_mode()
+    @torch.no_grad()
     def _baseline(
             self,
             title: str,
@@ -73,13 +73,11 @@ class RAG():
 
                 input_ids = chunk.unsqueeze(0)
 
-                emb = self.model.backbone(input_ids)
-
-                state_vector = emb.squeeze(0)
-                state_vector = state_vector.float().cpu().numpy()
+                emb = self.model.backbone(input_ids).squeeze(0)[-1]
+                emb = emb.float().cpu().numpy()
 
                 self.chunk_data.append({
-                    "embedding": state_vector,
+                    "embedding": emb,
                     "title": title,
                     "start": i,
                     "stop": min(i + chunk_size, len(token_ids)),
@@ -113,9 +111,6 @@ class RAG():
 
     # New ingest method that takes a dictionary of documents instead of a single corpus string
     def ingest(self, documents, strategy="baseline", **kwargs):
-
-        self.chunk_data = []
-
         for title, text in documents.items():
 
             if strategy == "baseline":
@@ -147,19 +142,23 @@ class RAG():
         embeddings = np.vstack([
             chunk["embedding"] for chunk in self.chunk_data
         ]).astype(np.float32)
+        ids = np.arange(len(embeddings))
+
+        print(embeddings.shape)
+        print(ids.shape)
 
         self.index.add_items(
             embeddings,
-            ids=np.arange(len(self.chunk_data))
+            ids=ids
         )
 
         print(f"Documents: {len(documents)}")
         print(f"Chunks: {len(self.chunk_data)}")
 
-    @torch.inference_mode()
+    @torch.no_grad()
     def query(self, question: str, k: int = 3, max_new_tokens: int = 100):
-
         # 1. Tokenize question
+        print(question)
         input_ids = self.tokenizer(
             question,
             return_tensors="pt",
@@ -167,9 +166,7 @@ class RAG():
         ).input_ids.to(self.device)
 
         # 2. Generate question embedding
-        embeddings = self.model.backbone(input_ids)
-
-        query_embedding = embeddings.mean(dim=1).squeeze(0)
+        query_embedding = self.model.backbone(input_ids).squeeze(0)
         query_embedding = query_embedding.float().cpu().numpy()
 
         # 3. Retrieve top-k chunks
@@ -179,8 +176,8 @@ class RAG():
             raise ValueError("The HNSW index is empty.")
 
         labels, distances = self.index.knn_query(
-            query_embedding.reshape(1, -1),
-            k=min(k, count)
+            query_embedding,
+            k=np.min([k, count])
         )
 
         # 4. Collect retrieved context and metadata
@@ -220,6 +217,8 @@ class RAG():
         Answer:
         """
 
+        print(prompt)
+
         # 6. Tokenize prompt
         prompt_ids = self.tokenizer(
             prompt,
@@ -228,26 +227,34 @@ class RAG():
         ).input_ids.to(self.device)
 
         # 7. Generate answer
-        generated_tokens = []
+        generated = []
         for _ in range(max_new_tokens):
             logits = self.model(
-                torch.cat([prompt_ids, *generated_tokens], dim=1)
+                torch.cat([prompt_ids, *generated], dim=1)
             ).logits[:, -1, :]
             next_token = logits.argmax(dim=-1, keepdim=True)
-            generated_tokens.append(next_token)
+            generated.append(next_token)
 
             if self.tokenizer.eos_token_id is not None and torch.all(
                 next_token == self.tokenizer.eos_token_id
             ):
                 break
 
-        # 8. Decode generated response
-        generated_tokens = torch.cat(generated_tokens, dim=1)[0]
+        generated = torch.cat(generated, dim=1)[0]
 
+        # generated = self.model.generate(
+        #     input_ids=prompt_ids,
+        #     max_length=max_new_tokens,
+        # )
+
+
+        # 8. Decode generated response
         answer = self.tokenizer.decode(
-            generated_tokens,
+            generated,
             skip_special_tokens=True
         )
+
+        print(answer)
 
         # 9. Return answer and retrieval information
         return {
@@ -297,50 +304,3 @@ def evaluate(rag, eval_dataset, k=3, max_new_tokens=100):
         print(f"Completed {i + 1}/{len(eval_dataset)}")
 
     return results
-
-
-# Main evaluation pipeline
-
-# Load dataset
-dataset = load_dataset(
-    "framolfese/2WikiMultihopQA",
-    split="validation"
-)
-
-# Select evaluation questions
-eval_dataset = dataset.shuffle(seed=42).select(range(3)) # Adjust the range for more evaluation questions
-
-# Build full validation corpus
-documents = load_2wiki_corpus(dataset)
-
-# Initialize model
-rag = RAG(
-    model_id="state-spaces/mamba3-siso-1.5b",
-    tokenizer_id="meta-llama/Llama-3.1-8B",
-    device="cuda",
-    dtype=torch.bfloat16,
-    space="cosine",
-    dim=2048
-)
-
-# Ingest corpus
-rag.ingest(
-    documents,
-    strategy="baseline",
-    chunk_size=512,
-    overlap=0.1
-)
-
-# Evaluate
-results = evaluate(
-    rag,
-    eval_dataset,
-    k=3,
-    max_new_tokens=100
-)
-
-# Save results
-import json
-
-with open("evaluation_results.json", "w", encoding="utf-8") as f:
-    json.dump(results, f, indent=4, ensure_ascii=False)
