@@ -133,8 +133,14 @@ class Souping:
     def encode(self, document):
         # Independently encode a single document and retain its final state.
         ids = self.tokens(document)
-        output = self.forward(ids)
-        return self.snapshot(output.cache_params, len(ids))
+        input_ids = torch.tensor([ids], device=self.device, dtype=torch.long)
+        with self.lock:
+            output = self.model.backbone(
+                input_ids=input_ids, use_cache=True, return_dict=True
+            )
+        state = self.snapshot(output.cache_params, len(ids))
+        state["last_hidden_state"] = output.last_hidden_state.detach().cpu().clone()
+        return state
 
     def encode_documents(self, documents):
         if not documents:
